@@ -1,0 +1,45 @@
+// http://coapp.org/tutorials/building-a-package.html
+
+nuget {
+   nuspec {
+        id = opencv.win.native;
+        version : 3.1.0.a;
+        title: OpenCV for Windows;
+        authors: harry.yoon;
+        owners: harry.yoon;
+        licenseUrl: "https://github.com/cvwin/cvwin/blob/master/LICENSE";
+        projectUrl: "https://github.com/cvwin/cvwin/";
+        iconUrl: "https://github.com/cvwin/cvwin/project.ico";
+        requireLicenseAcceptance:false;
+        summary: "Windows native builds for OpenCV (VS2015)";
+        description: @"This nuget package is an effort to make it easier to use OpenCV on Windows.
+		
+		This package is a native build using Visual Studio 2015.
+        ";
+        releaseNotes: "Initial builds";
+        copyright: Copyright 2016;
+        tags: { OpenCV, Windows, native };
+    }
+
+    files {
+        #defines {
+            OPENCV    = "C:\Projects\cvwin\opencv";
+            BUILD_X86 = "C:\Projects\cvwin\opencv-build-x86";
+            BUILD_X64 = "C:\Projects\cvwin\opencv-build-x64";
+        }
+        include: { "${OPENCV}\include\**\*.h", "${OPENCV}\modules\*\include\**\*.h" };   
+	
+
+        [x86,v140,debug] { 
+            lib: ${BUILD_X86}\lib\Debug\opencv_core310d.lib;
+            symbols: ${BUILD_X86}\bin\Debug\opencv_core310d.pdb;
+            bin: ${BUILD_X86}\bin\Debug\opencv_core310d.dll;
+        }
+    }
+
+    targets {
+        // Defines += HAS_OPENCV;
+    }
+
+}
+
