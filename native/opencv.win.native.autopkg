@@ -1,9 +1,17 @@
 // http://coapp.org/tutorials/building-a-package.html
 
+configurations {
+	// This node contains custom pivot information.
+	Toolset 
+	{
+	    key : "PlatformToolset"; // this is CoApp pre-defined key
+	    choices: { v140, v120, v110, v100 };
+	};
+}
 nuget {
    nuspec {
         id = opencv.win.native;
-        version : 3.1.0.a;
+        version : 310.0.1;
         title: OpenCV for Windows;
         authors: harry.yoon;
         owners: harry.yoon;
@@ -23,17 +31,29 @@ nuget {
 
     files {
         #defines {
-            OPENCV    = "C:\Projects\cvwin\opencv";
-            BUILD_X86 = "C:\Projects\cvwin\opencv-build-x86";
-            BUILD_X64 = "C:\Projects\cvwin\opencv-build-x64";
+            OPENCV    = "..\..\opencv";
+            BUILD_X86 = "..\..\opencv-build-x86";
+            BUILD_X64 = "..\..\opencv-build-x64";
         }
-        include: { "${OPENCV}\include\**\*.h", "${OPENCV}\modules\*\include\**\*.h" };   
-	
+        include: { 
+		    "${OPENCV}\include\**\*.h", "${OPENCV}\include\**\*.hpp", 
+		    "${OPENCV}\modules\core\include\**\*.h", "${OPENCV}\modules\core\include\**\*.hpp",
+		    "${OPENCV}\modules\calib3d\include\**\*.h", "${OPENCV}\modules\calib3d\include\**\*.hpp",
+		};   
 
-        [x86,v140,debug] { 
-            lib: ${BUILD_X86}\lib\Debug\opencv_core310d.lib;
-            symbols: ${BUILD_X86}\bin\Debug\opencv_core310d.pdb;
-            bin: ${BUILD_X86}\bin\Debug\opencv_core310d.dll;
+        [x86,v140,debug] {
+            lib: { 
+			    ${BUILD_X86}\lib\Debug\opencv_core310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_calib3d310d.lib
+			};
+            symbols: { 
+			    ${BUILD_X86}\bin\Debug\opencv_core310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.pdb
+			};
+            bin: { 
+			    ${BUILD_X86}\bin\Debug\opencv_core310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.dll
+			};
         }
     }
 
