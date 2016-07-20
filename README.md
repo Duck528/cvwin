@@ -12,9 +12,9 @@ Currently, the nuget build spec uses some conventions (partly due to the limitat
 
 You can just use pre-built nuget packages. But, in general, you may want to build your own version of OpenCV (using your preferred configurations). If you want to distribute your builds via NuGet (e.g., for internal use), then here's what you need to do:
 
-1. Install CoApp PowerShell tool.
+1. Install the [CoApp PowerShell tool](http://coapp.org/pages/releases.html).
 1. Build OpenCV and use the directories, "opencv-build-x86", "opencv-build-x64", etc., as a sibling to the cvwin root directory.
-1. Add all include files under "opencv-dist". This can be downloaded from cvwin/opencv-dist project. But, this may be outdated. Use your own distribution (binary build), if necessary.
+1. Add all include files under "opencv-dist". This can be downloaded from cvwin/opencv-dist project. But, this may be outdated. Use your own distribution (binary build), if necessary. All you need is the _include_ directory.
 1. Update opencv.win.native.autopkg to suit your project definitions. At minimum, you may want to change the _nuspec.id_ to avoid conflicts.
 1. Run _write-nugetpackage opencv.win.native.autopkg_ from the native directory.
 
