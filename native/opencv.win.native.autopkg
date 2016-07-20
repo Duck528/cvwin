@@ -44,15 +44,60 @@ nuget {
         [x86,v140,debug] {
             lib: { 
 			    ${BUILD_X86}\lib\Debug\opencv_core310d.lib,
-			    ${BUILD_X86}\lib\Debug\opencv_calib3d310d.lib
+			    ${BUILD_X86}\lib\Debug\opencv_calib3d310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_features2d310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_ffmpeg310.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_flann310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_highgui310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_imgcodecs310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_imgproc310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_ml310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_objdetect310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_photo310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_shape310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_stitching310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_superres310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_video310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_videoio310d.lib,
+			    ${BUILD_X86}\lib\Debug\opencv_videostab310d.lib,
 			};
             symbols: { 
 			    ${BUILD_X86}\bin\Debug\opencv_core310d.pdb,
-			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.pdb
+			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_features2d310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_ffmpeg310.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_flann310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_highgui310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_imgcodecs310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_imgproc310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_ml310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_objdetect310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_photo310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_shape310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_stitching310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_superres310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_video310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_videoio310d.pdb,
+			    ${BUILD_X86}\bin\Debug\opencv_videostab310d.pdb,
 			};
             bin: { 
 			    ${BUILD_X86}\bin\Debug\opencv_core310d.dll,
-			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.dll
+			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_features2d310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_ffmpeg310.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_flann310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_highgui310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_imgcodecs310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_imgproc310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_ml310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_objdetect310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_photo310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_shape310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_stitching310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_superres310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_video310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_videoio310d.dll,
+			    ${BUILD_X86}\bin\Debug\opencv_videostab310d.dll,
 			};
         }
     }
