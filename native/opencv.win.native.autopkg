@@ -31,22 +31,31 @@ nuget {
 
     files {
         #defines {
-            OPENCV    = "..\..\opencv";
-            BUILD_X86 = "..\..\opencv-build-x86";
-            BUILD_X64 = "..\..\opencv-build-x64";
+            OPENCV      = "..\..\opencv";
+            // OPENCV_INC = "..\..\opencv-include";
+            OPENCV_DIST = "..\..\opencv-dist";
+            BUILD_X86   = "..\..\opencv-build-x86";
+            BUILD_X64   = "..\..\opencv-build-x64";
         }
+        // include: { 
+		//     "${OPENCV}\include\**\*.h", "${OPENCV}\include\**\*.hpp", 
+		//     "${OPENCV}\modules\core\include\**\*.h", "${OPENCV}\modules\core\include\**\*.hpp",
+		//     "${OPENCV}\modules\calib3d\include\**\*.h", "${OPENCV}\modules\calib3d\include\**\*.hpp",
+		//     // etc. ....
+		// };   
+        //include: { 
+		//    "${OPENCV_INC}\**\*.h", "${OPENCV_INC}\**\*.hpp" 
+		//};   
         include: { 
-		    "${OPENCV}\include\**\*.h", "${OPENCV}\include\**\*.hpp", 
-		    "${OPENCV}\modules\core\include\**\*.h", "${OPENCV}\modules\core\include\**\*.hpp",
-		    "${OPENCV}\modules\calib3d\include\**\*.h", "${OPENCV}\modules\calib3d\include\**\*.hpp",
-		};   
+		    "${OPENCV_DIST}\include\**\*.h", "${OPENCV_DIST}\include\**\*.hpp" 
+		};
 
         [x86,v140,debug] {
             lib: { 
 			    ${BUILD_X86}\lib\Debug\opencv_core310d.lib,
 			    ${BUILD_X86}\lib\Debug\opencv_calib3d310d.lib,
 			    ${BUILD_X86}\lib\Debug\opencv_features2d310d.lib,
-			    ${BUILD_X86}\lib\Debug\opencv_ffmpeg310.lib,
+			    // ${BUILD_X86}\lib\Debug\opencv_ffmpeg310.lib,
 			    ${BUILD_X86}\lib\Debug\opencv_flann310d.lib,
 			    ${BUILD_X86}\lib\Debug\opencv_highgui310d.lib,
 			    ${BUILD_X86}\lib\Debug\opencv_imgcodecs310d.lib,
@@ -65,7 +74,7 @@ nuget {
 			    ${BUILD_X86}\bin\Debug\opencv_core310d.pdb,
 			    ${BUILD_X86}\bin\Debug\opencv_calib3d310d.pdb,
 			    ${BUILD_X86}\bin\Debug\opencv_features2d310d.pdb,
-			    ${BUILD_X86}\bin\Debug\opencv_ffmpeg310.pdb,
+			    // ${BUILD_X86}\bin\Debug\opencv_ffmpeg310.pdb,
 			    ${BUILD_X86}\bin\Debug\opencv_flann310d.pdb,
 			    ${BUILD_X86}\bin\Debug\opencv_highgui310d.pdb,
 			    ${BUILD_X86}\bin\Debug\opencv_imgcodecs310d.pdb,
@@ -105,7 +114,7 @@ nuget {
 			    ${BUILD_X86}\lib\Release\opencv_core310.lib,
 			    ${BUILD_X86}\lib\Release\opencv_calib3d310.lib,
 			    ${BUILD_X86}\lib\Release\opencv_features2d310.lib,
-			    ${BUILD_X86}\lib\Release\opencv_ffmpeg310.lib,
+			    // ${BUILD_X86}\lib\Release\opencv_ffmpeg310.lib,
 			    ${BUILD_X86}\lib\Release\opencv_flann310.lib,
 			    ${BUILD_X86}\lib\Release\opencv_highgui310.lib,
 			    ${BUILD_X86}\lib\Release\opencv_imgcodecs310.lib,
@@ -124,7 +133,7 @@ nuget {
 			    ${BUILD_X86}\bin\Release\opencv_core310.pdb,
 			    ${BUILD_X86}\bin\Release\opencv_calib3d310.pdb,
 			    ${BUILD_X86}\bin\Release\opencv_features2d310.pdb,
-			    ${BUILD_X86}\bin\Release\opencv_ffmpeg310.pdb,
+			    // ${BUILD_X86}\bin\Release\opencv_ffmpeg310.pdb,
 			    ${BUILD_X86}\bin\Release\opencv_flann310.pdb,
 			    ${BUILD_X86}\bin\Release\opencv_highgui310.pdb,
 			    ${BUILD_X86}\bin\Release\opencv_imgcodecs310.pdb,
@@ -165,7 +174,7 @@ nuget {
 			    ${BUILD_X64}\lib\Debug\opencv_core310d.lib,
 			    ${BUILD_X64}\lib\Debug\opencv_calib3d310d.lib,
 			    ${BUILD_X64}\lib\Debug\opencv_features2d310d.lib,
-			    ${BUILD_X64}\lib\Debug\opencv_ffmpeg310.lib,
+			    // ${BUILD_X64}\lib\Debug\opencv_ffmpeg310.lib,
 			    ${BUILD_X64}\lib\Debug\opencv_flann310d.lib,
 			    ${BUILD_X64}\lib\Debug\opencv_highgui310d.lib,
 			    ${BUILD_X64}\lib\Debug\opencv_imgcodecs310d.lib,
@@ -184,7 +193,7 @@ nuget {
 			    ${BUILD_X64}\bin\Debug\opencv_core310d.pdb,
 			    ${BUILD_X64}\bin\Debug\opencv_calib3d310d.pdb,
 			    ${BUILD_X64}\bin\Debug\opencv_features2d310d.pdb,
-			    ${BUILD_X64}\bin\Debug\opencv_ffmpeg310.pdb,
+			    // ${BUILD_X64}\bin\Debug\opencv_ffmpeg310.pdb,
 			    ${BUILD_X64}\bin\Debug\opencv_flann310d.pdb,
 			    ${BUILD_X64}\bin\Debug\opencv_highgui310d.pdb,
 			    ${BUILD_X64}\bin\Debug\opencv_imgcodecs310d.pdb,
@@ -203,7 +212,7 @@ nuget {
 			    ${BUILD_X64}\bin\Debug\opencv_core310d.dll,
 			    ${BUILD_X64}\bin\Debug\opencv_calib3d310d.dll,
 			    ${BUILD_X64}\bin\Debug\opencv_features2d310d.dll,
-			    ${BUILD_X64}\bin\Debug\opencv_ffmpeg310.dll,
+			    // ${BUILD_X64}\bin\Debug\opencv_ffmpeg310.dll,
 			    ${BUILD_X64}\bin\Debug\opencv_flann310d.dll,
 			    ${BUILD_X64}\bin\Debug\opencv_highgui310d.dll,
 			    ${BUILD_X64}\bin\Debug\opencv_imgcodecs310d.dll,
@@ -224,7 +233,7 @@ nuget {
 			    ${BUILD_X64}\lib\Release\opencv_core310.lib,
 			    ${BUILD_X64}\lib\Release\opencv_calib3d310.lib,
 			    ${BUILD_X64}\lib\Release\opencv_features2d310.lib,
-			    ${BUILD_X64}\lib\Release\opencv_ffmpeg310.lib,
+			    // ${BUILD_X64}\lib\Release\opencv_ffmpeg310.lib,
 			    ${BUILD_X64}\lib\Release\opencv_flann310.lib,
 			    ${BUILD_X64}\lib\Release\opencv_highgui310.lib,
 			    ${BUILD_X64}\lib\Release\opencv_imgcodecs310.lib,
@@ -243,7 +252,7 @@ nuget {
 			    ${BUILD_X64}\bin\Release\opencv_core310.pdb,
 			    ${BUILD_X64}\bin\Release\opencv_calib3d310.pdb,
 			    ${BUILD_X64}\bin\Release\opencv_features2d310.pdb,
-			    ${BUILD_X64}\bin\Release\opencv_ffmpeg310.pdb,
+			    // ${BUILD_X64}\bin\Release\opencv_ffmpeg310.pdb,
 			    ${BUILD_X64}\bin\Release\opencv_flann310.pdb,
 			    ${BUILD_X64}\bin\Release\opencv_highgui310.pdb,
 			    ${BUILD_X64}\bin\Release\opencv_imgcodecs310.pdb,
@@ -262,7 +271,7 @@ nuget {
 			    ${BUILD_X64}\bin\Release\opencv_core310.dll,
 			    ${BUILD_X64}\bin\Release\opencv_calib3d310.dll,
 			    ${BUILD_X64}\bin\Release\opencv_features2d310.dll,
-			    ${BUILD_X64}\bin\Release\opencv_ffmpeg310.dll,
+			    // ${BUILD_X64}\bin\Release\opencv_ffmpeg310.dll,
 			    ${BUILD_X64}\bin\Release\opencv_flann310.dll,
 			    ${BUILD_X64}\bin\Release\opencv_highgui310.dll,
 			    ${BUILD_X64}\bin\Release\opencv_imgcodecs310.dll,
