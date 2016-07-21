@@ -11,22 +11,20 @@ configurations {
 nuget {
    nuspec {
         id = opencv.win.native;
-        version : 310.0.1;
+        version : 310.0.2;
         title: OpenCV for Windows;
-        authors: harry.yoon;
-        owners: harry.yoon;
+        authors: Harry Y;
+        owners: Holo LC;
         licenseUrl: "https://github.com/cvwin/cvwin/blob/master/LICENSE";
         projectUrl: "https://github.com/cvwin/cvwin/";
         iconUrl: "https://github.com/cvwin/cvwin/project.ico";
         requireLicenseAcceptance:false;
         summary: "Windows native builds for OpenCV (VS2015)";
-        description: @"This nuget package is an effort to make it easier to use OpenCV on Windows.
-		
-		This package is a native build using Visual Studio 2015.
+        description: @"Pre-built OpenCV binaries on Windows. This package contains native builds of OpenCV3 - C++ for Visual Studio 2015. (Supports x86 and x64.)
         ";
         releaseNotes: "Initial builds";
         copyright: Copyright 2016;
-        tags: { OpenCV, Windows, native };
+        tags: { OpenCV, CVWin, native };
     }
 
     files {

@@ -8,9 +8,9 @@ The nuget package includes C++ binaries on Windows, which should be usable from 
 
 ## Native Version
 
-Currently, the nuget build spec uses some conventions (partly due to the limitations in the tool).
+Currently, the nuget build spec uses some conventions which you need to follow (partly due to the limitations in the tool).
 
-You can just use pre-built nuget packages. But, in general, you may want to build your own version of OpenCV (using your preferred configurations). If you want to distribute your builds via NuGet (e.g., for internal use), then here's what you need to do:
+You can just use pre-built nuget packages. But, in general, you may want to build your own version of OpenCV (using your preferred/optimized configurations). If you want to distribute your builds via NuGet (e.g., for internal use), then here's what you need to do:
 
 1. Install the [CoApp PowerShell tool](http://coapp.org/pages/releases.html).
 1. Build OpenCV and use the directories, "opencv-build-x86", "opencv-build-x64", etc., as a sibling to the cvwin root directory.
@@ -19,8 +19,17 @@ You can just use pre-built nuget packages. But, in general, you may want to buil
 1. Run _write-nugetpackage opencv.win.native.autopkg_ from the native directory.
 
 
+### Pre-Built Binaries
 
-_Note:_ The current distribution on NuGet repository only includes binaries for x86 and x64 (for Visual Studio 2015), but not for ARM.
+You can install pre-built OpenCV binaries from NuGet Gallery using Package Manager:
+
+    Install-Package opencv.win.native 
+
+
+
+_Note:_ The current distribution on the NuGet Gallery repository only includes binaries for x86 and x64 (for Visual Studio 2015), but not for ARM.
+
+
 
 
 ## C++/CLI Wrapper Library ("Universal DLLs")
