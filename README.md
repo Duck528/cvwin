@@ -17,8 +17,10 @@ You can just use pre-built nuget packages. But, in general, you may want to buil
 1. Add all include files under "opencv-dist". This can be downloaded from cvwin/opencv-dist project. But, this may be outdated. Use your own distribution (binary build), if necessary. All you need is the _include_ directory.
 1. Update opencv.win.native.autopkg to suit your project definitions. At minimum, you may want to change the _nuspec.id_ to avoid conflicts.
 1. Run _write-nugetpackage opencv.win.native.autopkg_ from the native directory.
-1. You can push nuget packages using `neget` CLI:
-    NuGet push [nupkg file apth] [api key] -NoSymbols -Timeout 3000 -Source nuget.org
+1. You can push nuget packages using `nuget` CLI:
+
+    NuGet push [nupkg file path] [api key] -NoSymbols -Timeout 3000 -Source nuget.org
+
 
 
 ### Pre-Built Binaries
