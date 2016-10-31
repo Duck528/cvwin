@@ -17,14 +17,14 @@ nuget {
         owners: Harry Y;
         licenseUrl: "https://github.com/cvwin/cvwin/blob/master/LICENSE";
         projectUrl: "https://github.com/cvwin/cvwin/";
-        iconUrl: "https://github.com/cvwin/cvwin/project.ico";
+        iconUrl: "https://raw.githubusercontent.com/cvwin/cvwin/master/opencv.win.png";
         requireLicenseAcceptance:false;
-        summary: "Windows native builds for OpenCV (VS2015)";
+        summary: "Windows native builds for OpenCV C++ (VS2015)";
         description: @"Pre-built OpenCV binaries on Windows. This package contains native builds of OpenCV3 - C++ for Visual Studio 2015. (Supports x86 and x64.)
         ";
         releaseNotes: "x86/x64 builds for OpenCV 3.1 snapshot 102916";
         copyright: Copyright 2016;
-        tags: { OpenCV, CVWin, Computer Vision, Cpp, C++, VS2015, visual studio, native };
+        tags: { OpenCV, CVWin, Computer Vision, Cpp, C++, VS2015, visual studio, windows, native, Win32 };
     }
 
     files {
