@@ -1,3 +1,5 @@
 How to Create UWP Packages
 http://nugetdocsbeta.azurewebsites.net/ndocs/guides/create-uwp-packages
 
+How to: Use Existing C++ Code in a Universal Windows Platform App
+https://msdn.microsoft.com/en-us/library/mt186162.aspx
