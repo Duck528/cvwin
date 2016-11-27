@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <OpenCVWinObjDetect-Platform Condition="'$(Platform)' == 'Win32'">x86</OpenCVWinObjDetect-Platform>
+        <OpenCVWinObjDetect-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</OpenCVWinObjDetect-Platform>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ReferenceCopyLocalPaths Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinObjDetect-Platform)\native\opencv_objdetect310.dll" />
+        <ReferenceCopyLocalPaths Condition="'$(Configuration)' == 'Debug'"   Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinObjDetect-Platform)\native\opencv_objdetect310d.dll" />
+    </ItemGroup>
+<!--
+    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\OpenCVWinObjDetect.winmd">
+            <Implementation>OpenCVWinObjDetect.dll</Implementation>
+        </Reference>
+        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinObjDetect-Platform)\native\OpenCVWinObjDetect.dll" />
+    </ItemGroup>
+-->
+    <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ClCompile>
+            <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)win10-$(OpenCVWinObjDetect-Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies Condition="'$(Configuration)' == 'Release'">opencv_objdetect310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+            <AdditionalDependencies Condition="'$(Configuration)' == 'Debug'">opencv_objdetect310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+
+</Project>

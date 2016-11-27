@@ -1,0 +1,44 @@
+
+nuget pack opencv.win.core.nuspec -Properties Configuration=Release
+nuget pack opencv.win.imgproc.nuspec -Properties Configuration=Release
+nuget pack opencv.win.imgcodecs.nuspec -Properties Configuration=Release
+nuget pack opencv.win.videoio.nuspec -Properties Configuration=Release
+nuget pack opencv.win.highgui.nuspec -Properties Configuration=Release
+
+nuget pack opencv.win.photo.nuspec -Properties Configuration=Release
+nuget pack opencv.win.video.nuspec -Properties Configuration=Release
+nuget pack opencv.win.Shape.nuspec -Properties Configuration=Release
+
+nuget pack opencv.win.flann.nuspec -Properties Configuration=Release
+nuget pack opencv.win.ml.nuspec -Properties Configuration=Release
+
+nuget pack opencv.win.objdetect.nuspec -Properties Configuration=Release
+nuget pack opencv.win.features2d.nuspec -Properties Configuration=Release
+
+nuget pack opencv.win.calib3d.nuspec -Properties Configuration=Release
+nuget pack opencv.win.stitching.nuspec -Properties Configuration=Release
+nuget pack opencv.win.videostab.nuspec -Properties Configuration=Release
+
+
+
+NuGet push OpenCV.Win.Core.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.ImgProc.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.ImgCodecs.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.VideoIO.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.HighGUI.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+
+NuGet push OpenCV.Win.Photo.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.Video.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.Shape.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+
+NuGet push OpenCV.Win.Flann.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.ML.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+
+NuGet push OpenCV.Win.ObjDetect.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.Features2D.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+
+NuGet push OpenCV.Win.Calib3D.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.Stitching.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+NuGet push OpenCV.Win.VideoStab.310.5.1.nupkg [API-KEY] -NoSymbols -Timeout 3000 -Source nuget.org
+
+
