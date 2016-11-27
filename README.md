@@ -34,7 +34,7 @@ You can install pre-built OpenCV binaries (DLLs) from NuGet Gallery using Packag
 _Note:_ The current distribution on the NuGet Gallery repository only includes binaries for x86 and x64 (for Visual Studio 2015), but not for ARM.
 
 
-There are also static library versons:
+There are also static library versions:
 
     Install-Package opencv.win.native.static
 
@@ -57,7 +57,7 @@ _Coming soon_
 
 OpenCV can be built to be used in UWP apps on Windows 10 devices. 
 Once you build "UWP-compatible" libraries, you can package them into nuget pakcages, if desired.
-You can find some example nuspec files under the _uwp/_ directory.
+You can find some example nuspec files under the _uwp_ directory.
 
 (I'll write more detailed how-to guide later. Please ping me if you need help.)
 
