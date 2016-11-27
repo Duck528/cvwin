@@ -2,11 +2,11 @@
 ### OpenCV build for .Net and UWP.
 
 
-The sole purpose of this project is to create a nuget package for OpenCV.
-The nuget package includes C++ binaries on Windows, which should be usable from .Net and UWP apps.
+The sole purpose of this project is to create nuget packages for OpenCV.
+The nuget packages include C++ binaries on Windows, which should be usable from Win32, .Net, and/or UWP apps.
 
 
-## Native Version
+## Native Version (Win32)
 
 Currently, the nuget build spec uses some conventions which you need to follow (partly due to the limitations in the tool).
 
@@ -25,13 +25,18 @@ You can just use pre-built nuget packages. But, in general, you may want to buil
 
 ### Pre-Built Binaries
 
-You can install pre-built OpenCV binaries from NuGet Gallery using Package Manager:
+You can install pre-built OpenCV binaries (DLLs) from NuGet Gallery using Package Manager:
 
     Install-Package opencv.win.native 
 
 
 
 _Note:_ The current distribution on the NuGet Gallery repository only includes binaries for x86 and x64 (for Visual Studio 2015), but not for ARM.
+
+
+There are also static library versons:
+
+    Install-Package opencv.win.native.static
 
 
 
@@ -44,6 +49,35 @@ _Coming soon_
 ## C++/CX Wrapper Library (for .Net Core)
 
 _Coming soon_
+
+
+
+
+## UWP Version
+
+OpenCV can be built to be used in UWP apps on Windows 10 devices. 
+Once you build "UWP-compatible" libraries, you can package them into nuget pakcages, if desired.
+You can find some example nuspec files under the _uwp/_ directory.
+
+(I'll write more detailed how-to guide later. Please ping me if you need help.)
+
+
+
+### Pre-Built Packages
+
+I built UWP version of nuget packages for OpenCV release 3.1.0, and put them in Nuget Gallery.
+There are currenly 15 packages, one for each module.
+
+You can install them using Package Manager. For instance, 
+
+    Install-Package OpenCV.Win.Core
+    Install-Package OpenCV.Win.ImgProc
+    ...
+
+
+Note that _VideoIO,_ and all dependent modules, require UWP Desktop extension,
+and those modules (or, at least certain features from VideoIO) cannot be used with other Windows 10 devices like Windows Phone or HoloLens.
+
 
 
 
