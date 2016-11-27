@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>OpenCV.Win.Stitching</id>
-    <version>310.5.7-dev</version>
+    <version>310.6.0</version>
     <title>OpenCV Win Stitching (UWP)</title>
     <authors>OpenCV authors</authors>
     <owners>OpenCV authors</owners>
@@ -10,20 +10,20 @@
     <projectUrl>https://github.com/cvwin/cvwin</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/cvwin/cvwin/master/opencv.win.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Pre-built OpenCV binaries on Windows (UWP). This package contains native builds of OpenCV3 - C++ for Visual Studio 2015. (Supports x86 and x64.)</description>
+    <description>Pre-built OpenCV binaries on Windows (UWP). This package contains native builds of OpenCV3 - C++ (x86 and x64). Note that VideoIO, and all dependent modules, require UWP Desktop extension.</description>
     <releaseNotes>Initial release of OpenCV 3.1.0 nuget package on UWP.</releaseNotes>
     <copyright>Copyright 2016, OpenCV, Harry Y</copyright>
-    <tags>OpenCV, CVWin, Computer Vision, Cpp, C++, VS2015, visual studio, windows, UWP, native, Win32</tags>
+    <tags>OpenCV, CVWin, Computer Vision, Cpp, C++, VS2015, visual studio, windows, universal windows, UWP, native, Win32</tags>
     <dependencies>
-      <dependency id="OpenCV.Win.Core" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.ImgProc" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.ImgCodecs" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.VideoIO" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.HighGUI" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.ML" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.Features2D" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.FLANN" version="310.5.7-dev" />
-      <dependency id="OpenCV.Win.Calib3D" version="310.5.7-dev" />
+      <dependency id="OpenCV.Win.Core" version="310.6.0" />
+      <dependency id="OpenCV.Win.ImgProc" version="310.6.0" />
+      <dependency id="OpenCV.Win.ImgCodecs" version="310.6.0" />
+      <dependency id="OpenCV.Win.VideoIO" version="310.6.0" />
+      <dependency id="OpenCV.Win.HighGUI" version="310.6.0" />
+      <dependency id="OpenCV.Win.ML" version="310.6.0" />
+      <dependency id="OpenCV.Win.Features2D" version="310.6.0" />
+      <dependency id="OpenCV.Win.FLANN" version="310.6.0" />
+      <dependency id="OpenCV.Win.Calib3D" version="310.6.0" />
     </dependencies>
   </metadata>
   <files>

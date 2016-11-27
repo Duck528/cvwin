@@ -3,3 +3,10 @@ http://nugetdocsbeta.azurewebsites.net/ndocs/guides/create-uwp-packages
 
 How to: Use Existing C++ Code in a Universal Windows Platform App
 https://msdn.microsoft.com/en-us/library/mt186162.aspx
+
+OpenCV HighGui module available for WinRT
+    https ://msopentech.com/blog/2015/07/10/opencv-highgui-module-available-for-winrt/
+WinRT support
+    http://docs.opencv.org/trunk/d6/d2f/group__highgui__winrt.html#ga1c1224490daecb1694f65cce6132d9c9
+
+
