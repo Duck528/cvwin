@@ -13,7 +13,7 @@ nuget {
         id = opencv.win.native.static;
 //        version : 310.4.0;
         version : 310.4.112316-dev;
-        title: OpenCV for Windows;
+        title: OpenCV for Windows (Static Libraries);
         authors: Harry Y;
         owners: Harry Y;
         licenseUrl: "https://github.com/cvwin/cvwin/blob/master/LICENSE";
@@ -21,7 +21,7 @@ nuget {
         iconUrl: "https://raw.githubusercontent.com/cvwin/cvwin/master/opencv.win.png";
         requireLicenseAcceptance:false;
         summary: "Windows native builds for OpenCV C++ (VS2015)";
-        description: @"Pre-built OpenCV binaries on Windows. This package contains native builds of OpenCV3 - C++ for Visual Studio 2015. (Supports x86 and x64.)
+        description: @"Pre-built OpenCV binaries on Windows. This package contains native builds of OpenCV3 - C++ for Visual Studio 2015 (Win32 static libraries for x86 and x64).
         ";
 //        releaseNotes: "x86/x64 builds for OpenCV 3.1.0. Static libraries.";
         releaseNotes: "x86/x64 builds for OpenCV 3.1-dev snapshot 112316. Static libraries.";
