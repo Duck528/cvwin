@@ -25,7 +25,7 @@ You can just use pre-built nuget packages. But, in general, you may want to buil
 
 ### Pre-Built Binaries
 
-You can install pre-built OpenCV binaries (DLLs) from NuGet Gallery using Package Manager:
+You can install [pre-built OpenCV binaries (DLLs)](https://www.nuget.org/packages/opencv.win.native) from NuGet Gallery using Package Manager:
 
     Install-Package opencv.win.native 
 
@@ -34,7 +34,7 @@ You can install pre-built OpenCV binaries (DLLs) from NuGet Gallery using Packag
 _Note:_ The current distribution on the NuGet Gallery repository only includes binaries for x86 and x64 (for Visual Studio 2015), but not for ARM.
 
 
-There are also static library versions:
+There are also [static library versions for OpenCV Win32](https://www.nuget.org/packages/opencv.win.native.static):
 
     Install-Package opencv.win.native.static
 
@@ -68,14 +68,17 @@ You can find some example nuspec files under the _uwp_ directory.
 I built UWP version of nuget packages for OpenCV release 3.1.0, and put them in Nuget Gallery.
 There are currenly 15 packages, one for each module.
 
-You can install them using Package Manager. For instance, 
+You can install them using Package Manager.
+For instance, 
 
     Install-Package OpenCV.Win.Core
     Install-Package OpenCV.Win.ImgProc
     ...
 
+Search for ["OpenCV.Win UWP" on Nuget Gallery](https://www.nuget.org/packages?q=OpenCV.Win+UWP) for all 15 modules.
 
-Note that _VideoIO,_ and all dependent modules, require UWP Desktop extension,
+
+Note that _VideoIO,_ and all dependent modules, require UWP Desktop extensions,
 and those modules (or, at least certain features from VideoIO) cannot be used with other Windows 10 devices like Windows Phone or HoloLens.
 
 
