@@ -68,7 +68,7 @@ You can find some example nuspec files under the _uwp_ directory.
 
 ### Pre-Built Packages
 
-I built UWP version of nuget packages for OpenCV release 3.1.0, and put them in Nuget Gallery.
+I built UWP version of nuget packages for OpenCV release 3.1.0 (x86, x64, and ARM), and put them in Nuget Gallery.
 There are currenly 15 packages, one for each module.
 
 You can install them using Package Manager.
