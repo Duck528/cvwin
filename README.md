@@ -1,8 +1,9 @@
 # OpenCV for Windows
+
+_Note: All repos under the 'cvwin organization' on GitHub are currently being re-organized/refactored. Meanwhile, please download pre-built nuget packages for OpenCV 3 from Nuget Gallery._
+
+
 ### OpenCV build for .Net and UWP.
-
-_Note: All repos under the 'cvwin organization' on GitHub are currently being re-organized. Meanwhile, please download pre-built nuget packages for OpenCV 3 from Nuget Gallery._
-
 
 The sole purpose of this project is to create nuget packages for OpenCV.
 The nuget packages include C++ binaries on Windows, which should be usable from Win32, .Net, and/or UWP apps.
