@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <OpenCVWinFeatures2D-Platform Condition="'$(Platform)' == 'Win32'">x86</OpenCVWinFeatures2D-Platform>
+        <OpenCVWinFeatures2D-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</OpenCVWinFeatures2D-Platform>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ReferenceCopyLocalPaths Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinFeatures2D-Platform)\native\opencv_features2d310.dll" />
+        <ReferenceCopyLocalPaths Condition="'$(Configuration)' == 'Debug'"   Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinFeatures2D-Platform)\native\opencv_features2d310d.dll" />
+    </ItemGroup>
+<!--
+    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\OpenCVWinFeatures2D.winmd">
+            <Implementation>OpenCVWinFeatures2D.dll</Implementation>
+        </Reference>
+        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinFeatures2D-Platform)\native\OpenCVWinFeatures2D.dll" />
+    </ItemGroup>
+-->
+    <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ClCompile>
+            <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)win10-$(OpenCVWinFeatures2D-Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies Condition="'$(Configuration)' == 'Release'">opencv_features2d310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+            <AdditionalDependencies Condition="'$(Configuration)' == 'Debug'">opencv_features2d310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <OpenCVWinPhoto-Platform Condition="'$(Platform)' == 'Win32'">x86</OpenCVWinPhoto-Platform>
+        <OpenCVWinPhoto-Platform Condition="'$(Platform)' != 'Win32'">$(Platform)</OpenCVWinPhoto-Platform>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ReferenceCopyLocalPaths Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinPhoto-Platform)\native\opencv_photo310.dll" />
+        <ReferenceCopyLocalPaths Condition="'$(Configuration)' == 'Debug'"   Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinPhoto-Platform)\native\opencv_photo310d.dll" />
+    </ItemGroup>
+<!--
+    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <Reference Include="$(MSBuildThisFileDirectory)..\..\lib\uap10.0\OpenCVWinPhoto.winmd">
+            <Implementation>OpenCVWinPhoto.dll</Implementation>
+        </Reference>
+        <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(OpenCVWinPhoto-Platform)\native\OpenCVWinPhoto.dll" />
+    </ItemGroup>
+-->
+    <ItemDefinitionGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+        <ClCompile>
+            <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+        </ClCompile>
+        <Link>
+            <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)win10-$(OpenCVWinPhoto-Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+            <AdditionalDependencies Condition="'$(Configuration)' == 'Release'">opencv_photo310.lib;%(AdditionalDependencies)</AdditionalDependencies>
+            <AdditionalDependencies Condition="'$(Configuration)' == 'Debug'">opencv_photo310d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+        </Link>
+    </ItemDefinitionGroup>
+
+</Project>
