@@ -1,0 +1,106 @@
+// http://coapp.org/tutorials/building-a-package.html
+// Set-ExecutionPolicy Unrestricted 
+// write-nugetpackage opencv.win.native-vs141-3.2.0.autopkg
+// NuGet push [nupkg file path] [api key] -Symbols -Timeout 3000 -Source nuget.org
+
+
+configurations {
+	// This node contains custom pivot information.
+	Toolset 
+	{
+	    key : "PlatformToolset"; // this is CoApp pre-defined key
+	    choices: { v141, v140, v120, v110, v100 };
+	};
+}
+nuget {
+   nuspec {
+        id = opencv.win.native;
+        version : 320.1.1-vs141;
+        title: OpenCV for Windows;
+        authors: Harry Y;
+        owners: Harry Y;
+        licenseUrl: "https://github.com/cvwin/cvwin/blob/master/LICENSE";
+        projectUrl: "https://github.com/cvwin/cvwin/";
+        iconUrl: "https://raw.githubusercontent.com/cvwin/cvwin/master/opencv.win.png";
+        requireLicenseAcceptance:false;
+        summary: "Windows native builds for OpenCV C++ (VS2015/VS2017)";
+        description: @"Pre-built OpenCV binaries on Windows (Win32 DLLs). This package contains native builds of OpenCV3 - C++ for Visual Studio 2015/2017. (Supports x86 and x64.)
+        ";
+        releaseNotes: "x86/x64 builds for OpenCV 3.2 release for Visual Studio 2017 RC.";
+        copyright: Copyright 2017;
+        tags: { OpenCV, OpenCV3, CVWin, ComputerVision, Cpp, C++, VS2015, VS2017, VisualStudio, windows, native, Win32 };
+    }
+
+    files {
+        #defines {
+            OPENCV      = "..\..\opencv";
+            BUILD_X86   = "..\..\opencv-build-x86";
+            BUILD_X64   = "..\..\opencv-build-x64";
+        }
+        include: { 
+		    "${BUILD_X64}\install-release\include\**\*.h", "${BUILD_X64}\install-release\include\**\*.hpp" 
+		};
+
+
+		// tbd:
+		// We need to use two different install dirs for debug and release....
+		
+        [x86,v141,debug] {
+            lib: { 
+			    ${BUILD_X86}\install-debug\x86\vc15\lib\*.lib
+//			    ${BUILD_X86}\install-debug\x86\vc15\lib\*.cmake
+			};
+            bin: { 
+			    ${BUILD_X86}\install-debug\x86\vc15\bin\*.dll
+			};
+//            symbols: { 
+//			    ${BUILD_X86}\install-debug\x86\vc15\bin\*.pdb
+//			};
+        }
+        [x86,v141,release] {
+            lib: { 
+			    ${BUILD_X86}\install-release\x86\vc15\lib\*.lib
+//			    ${BUILD_X86}\install-release\x86\vc15\lib\*.cmake
+			};
+            bin: { 
+			    ${BUILD_X86}\install-release\x86\vc15\bin\*.dll,
+			    ${BUILD_X86}\install-release\x86\vc15\bin\*.exe
+			};
+//            symbols: { 
+//			    ${BUILD_X86}\install-release\x86\vc15\bin\*.pdb
+//			};
+        }
+
+        [x64,v141,debug] {
+            lib: { 
+			    ${BUILD_X64}\install-debug\x64\vc15\lib\*.lib
+//			    ${BUILD_X64}\install-debug\x64\vc15\lib\*.cmake
+			};
+            bin: { 
+			    ${BUILD_X64}\install-debug\x64\vc15\bin\*.dll
+			};
+//            symbols: { 
+//			    ${BUILD_X64}\install-debug\x64\vc15\bin\*.pdb
+//			};
+        }
+        [x64,v141,release] {
+            lib: { 
+			    ${BUILD_X64}\install-release\x64\vc15\lib\*.lib
+//			    ${BUILD_X64}\install-release\x64\vc15\lib\*.cmake
+			};
+            bin: { 
+			    ${BUILD_X64}\install-release\x64\vc15\bin\*.dll,
+			    ${BUILD_X64}\install-release\x64\vc15\bin\*.exe
+			};
+//            symbols: { 
+//			    ${BUILD_X64}\install-release\x64\vc15\bin\*.pdb
+//			};
+        }
+
+	}
+
+    targets {
+        // Defines += HAS_OPENCV;
+    }
+
+}
